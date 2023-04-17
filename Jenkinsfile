@@ -31,7 +31,7 @@ pipeline {
             steps {
                 dir('/home/ubuntu/workspace/final/k8s-configuration') {
                 sh 'kubectl apply -f deployment.yaml'
-                sh "kubectl patch deployment pythonapp-deployment --type=json -p '[{\"op\": \"replace\", \"path\": \"/spec/template/spec/containers/0/image\", \"value\": \"arieldomchik/ariel:pythonapp3\"}]'"
+                sh "kubectl patch deployment pythonapp-deployment --type=json -p '[{\"op\": \"replace\", \"path\": \"/spec/template/spec/containers/0/image\", \"value\": \"arieldomchik/ariel:pythonapp4\"}]'"
                 sh 'kubectl apply -f service.yaml'
                }
             }
