@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import logging
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///efs/crud.db' # Using SQLite database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///crud.db' # Using SQLite database
 db = SQLAlchemy(app)
 
 logging.info('Application Running!')
