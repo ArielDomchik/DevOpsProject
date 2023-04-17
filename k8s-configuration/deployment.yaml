@@ -17,6 +17,9 @@ spec:
           image: arieldomchik/ariel:pythonapp
           ports:
             - containerPort: 5000
+          volumeMounts:
+            - mountPath: /efs/crud.db
+              name: volume
       volumes:
         - name: volume
           hostPath:
