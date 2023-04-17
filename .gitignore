@@ -1,0 +1,5 @@
+test.db
+instance/
+crud.db
+pythonapp.log
+*.log
