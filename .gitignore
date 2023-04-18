@@ -1,9 +1,0 @@
-test.db
-instance/
-crud.db
-pythonapp.log
-*.log
-__pycache__/
-app.cpython-38.pyc
-__pycache__/app.cpython-38.pyc
-.gitignore
