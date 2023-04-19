@@ -32,13 +32,13 @@ pipeline {
                 dir('/home/ubuntu/workspace/final/k8s-configuration') {
                 sh 'aws eks --region us-east-1 update-kubeconfig --name education-eks-mU5Oi6Rx'
                 sh 'kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.16"'
+                sh 'kubectl apply -f pv.yaml'
+                sh 'kubectl apply -f storageclass.yaml'
+                sh 'kubectl apply -f pvc.yaml'
                 sh 'kubectl apply -f deployment.yaml'
                 sh "kubectl patch deployment pythonapp-deployment --type=json -p '[{\"op\": \"replace\", \"path\": \"/spec/template/spec/containers/0/image\", \"value\": \"arieldomchik/ariel:pythonapp-new\"}]'"
                 sh 'kubectl apply -f service.yaml'
                 sh 'kubectl apply -f filebeat-kubernetes.yaml'
-                sh 'kubectl apply -f pv.yaml'
-                sh 'kubectl apply -f storageclass.yaml'
-                sh 'kubectl apply -f pvc.yaml'
                }
             }
         }
