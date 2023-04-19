@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
         - name: pythonapp
-          image: arieldomchik/ariel:pythonapp
+          image: arieldomchik/ariel:pythonapp-new
           ports:
             - containerPort: 5000
           volumeMounts:
-            - mountPath: /logs/pythonapp.log
+            - mountPath: /pythonapp.log
               name: logs-volume
             - name: pythonapp-volume
-              mountPath: /crud.db
+              mountPath: /instance/crud.db
 
       volumes:
         - name: pythonapp-volume

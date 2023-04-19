@@ -8,6 +8,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   awsElasticBlockStore:
-    volumeID: vol-0f31a590eac92556c
+    volumeID: vol-0086879693c592ffd
     fsType: ext4
   storageClassName: pythonapp-storageclass
