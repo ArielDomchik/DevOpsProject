@@ -33,6 +33,7 @@ pipeline {
                 sh 'kubectl apply -f deployment.yaml'
                 sh "kubectl patch deployment pythonapp-deployment --type=json -p '[{\"op\": \"replace\", \"path\": \"/spec/template/spec/containers/0/image\", \"value\": \"arieldomchik/ariel:pythonapp-new\"}]'"
                 sh 'kubectl apply -f service.yaml'
+                sh 'kubectl apply -f filebeat-kubernetes.yaml'
                }
             }
         }

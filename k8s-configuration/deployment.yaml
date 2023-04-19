@@ -24,3 +24,7 @@ spec:
         - name: volume
           hostPath:
             path: /efs/crud.db
+      volumes:
+        - name: logs
+          hostPath:
+            path: /pythonapp.log
