@@ -18,14 +18,15 @@ spec:
           ports:
             - containerPort: 5000
           volumeMounts:
-            - mountPath: /crud.db
-              name: db-volume
             - mountPath: /logs/pythonapp.log
               name: logs-volume
+            - name: pythonapp-volume
+              mountPath: /crud.db
+
       volumes:
-        - name: db-volume
-          hostPath:
-            path: /crud.db
+        - name: pythonapp-volume
+          persistentVolumeClaim:
+            claimName: pythonapp-pvc
         - name: logs-volume
           hostPath:
             path: /pythonapp.log
