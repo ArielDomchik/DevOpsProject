@@ -18,13 +18,14 @@ spec:
           ports:
             - containerPort: 5000
           volumeMounts:
-            - mountPath: /efs/crud.db
-              name: volume
+            - mountPath: /crud.db
+              name: db-volume
+            - mountPath: /logs/pythonapp.log
+              name: logs-volume
       volumes:
-        - name: volume
+        - name: db-volume
           hostPath:
-            path: /efs/crud.db
-      volumes:
-        - name: logs
+            path: /crud.db
+        - name: logs-volume
           hostPath:
             path: /pythonapp.log
