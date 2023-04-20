@@ -12,21 +12,48 @@ spec:
       labels:
         app: pythonapp
     spec:
+      nodeSelector:
+        vol: pers
       containers:
         - name: pythonapp
-          image: arieldomchik/ariel:pythonapp-new
+          image: arieldomchik/ariel:pythonapp-v2
           ports:
             - containerPort: 5000
           volumeMounts:
-            - mountPath: /pythonapp.log
-              name: logs-volume
             - name: pythonapp-volume
-              mountPath: /instance/crud.db
-
+              mountPath: /logs
+              subPath: pythonapp.log
+            - name: pythonapp-volume
+              mountPath: /instance
+              subPath: crud.db
+        - name: filebeat
+          image: docker.elastic.co/beats/filebeat:7.12.1
+          volumeMounts:
+            - name: pythonapp-volume
+              mountPath: /logs
+              readOnly: true
+            - name: filebeat-config
+              mountPath: /usr/share/filebeat/filebeat.yml
+              subPath: filebeat.yml
+          env:
+            - name: ELASTICSEARCH_HOST
+              value: elasticsearch-cluster
+            - name: ELASTICSEARCH_PORT
+              value: "9200"
+            - name: ELASTICSEARCH_USERNAME
+              value: elastic
+            - name: ELASTICSEARCH_PASSWORD
+              value: changeme
+            - name: ELASTICSEARCH_INDEX
+              value: pythonapp
+          args: [
+            "-e", 
+            "-c", "/usr/share/filebeat/filebeat.yml"
+          ]
       volumes:
         - name: pythonapp-volume
           persistentVolumeClaim:
             claimName: pythonapp-pvc
-        - name: logs-volume
-          hostPath:
-            path: /pythonapp.log
+        - name: filebeat-config
+          configMap:
+            name: filebeat-config

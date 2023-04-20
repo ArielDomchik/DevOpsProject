@@ -9,7 +9,7 @@ db = SQLAlchemy(app)
 logging.info('Application Running!')
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
-logging.basicConfig(filename="pythonapp.log")
+logging.basicConfig(filename="/logs/pythonapp.log")
 
 
 
