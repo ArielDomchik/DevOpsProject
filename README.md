@@ -26,6 +26,8 @@ Follow the steps below to set up the project:
 ## Note: Make sure to attach the AmazonEBSCSIPolicy manually in the AWS Management Console.
 
 - This gets done by `kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.16"`
+- Alternatively, this command is inside the Jenkinsfile as a step in the pipeline
+
 
 3. Update the kubeconfig context to use the provisioned cluster API server:
   `aws eks --region <region> update-kubeconfig --name <cluster-name>`
