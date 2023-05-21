@@ -21,9 +21,9 @@ Follow the steps below to set up the project:
 
    `cd terraform-configuration`
    `terraform init`
-   `before applying, change the backend in terraform.tf "name = <change_here>"
+   `before applying, change the backend in terraform.tf "name = <change_here>"`
 
-#Note: Make sure to attach the AmazonEBSCSIPolicy manually in the AWS Management Console.
+# Note: Make sure to attach the AmazonEBSCSIPolicy manually in the AWS Management Console.
 
 3. Update the kubeconfig context to use the provisioned cluster API server:
   `aws eks --region <region> update-kubeconfig --name <cluster-name>`
