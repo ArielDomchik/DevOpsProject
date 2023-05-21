@@ -19,9 +19,9 @@ Follow the steps below to set up the project:
 
 2. Provision the VPC and cluster infrastructure using Terraform:
 
-   `cd terraform-configuration`
-   `terraform init`
-   `before applying, change the backend in terraform.tf "name = <change_here>"`
+ -   `cd terraform-configuration`
+ -   `terraform init`
+ -   `before applying, change the backend in terraform.tf "name = <change_here>"`
 
 ## Note: Make sure to attach the AmazonEBSCSIPolicy manually in the AWS Management Console.
 
@@ -38,11 +38,11 @@ Follow the steps below to set up the project:
 
 6. Set up the Jenkins pipeline:
 
-    Create a new Jenkins pipeline job.
-    Configure the pipeline to use the provided Jenkinsfile.
-    Set the Docker registry credentials as environment variables in Jenkins:
-        DOCKER_USER (Docker registry username)
-        DOCKER_PASS (Docker registry password)
+   - Create a new Jenkins pipeline job.
+   - Configure the pipeline to use the provided Jenkinsfile.
+   - Set the Docker registry credentials as environment variables in Jenkins:
+    -    DOCKER_USER (Docker registry username)
+    -    DOCKER_PASS (Docker registry password)
 
 Run the Jenkins pipeline to build, test, and deploy the application.
 
