@@ -41,12 +41,13 @@ Follow the steps below to set up the project:
    - Create a new Jenkins pipeline job.
    - Configure the pipeline to use the provided Jenkinsfile.
    - Set the Docker registry credentials as environment variables in Jenkins:
-    -    DOCKER_USER (Docker registry username)
-    -    DOCKER_PASS (Docker registry password)
+    -    `DOCKER_USER (Docker registry username)`
+    -    `DOCKER_PASS (Docker registry password)`
 
 Run the Jenkins pipeline to build, test, and deploy the application.
 
 ## Cleanup
+
  - use `terraform destroy` in terraform-configuration directory
 
 
