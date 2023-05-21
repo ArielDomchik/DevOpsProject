@@ -23,7 +23,7 @@ Follow the steps below to set up the project:
  -   `terraform init`
  -   `before applying, change the backend in terraform.tf "name = <change_here>"`
 
-## Note: Make sure to attach the AmazonEBSCSIPolicy manually in the AWS Management Console.
+### Note: Make sure to attach the AmazonEBSCSIPolicy manually in the AWS Management Console.
 
 - This gets done by `kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.16"`
 - Alternatively, this command is inside the Jenkinsfile as a step in the pipeline
