@@ -19,9 +19,9 @@ Follow the steps below to set up the project:
 
 2. Provision the VPC and cluster infrastructure using Terraform:
 
-   `cd terraform-configuration
-       terraform init
-   before applying, change the backend in terraform.tf  "name = "<change-here>""`
+   `cd terraform-configuration`
+   `terraform init`
+   `before applying, change the backend in terraform.tf "name = <change_here>"
 
 #Note: Make sure to attach the AmazonEBSCSIPolicy manually in the AWS Management Console.
 
