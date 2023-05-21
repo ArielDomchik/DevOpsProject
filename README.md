@@ -15,7 +15,7 @@ This project provides an automated deployment pipeline using Jenkins, Docker, an
 Follow the steps below to set up the project:
 
 1. Clone the repository
-   git clone https://github.com/ArielDomchik/DevOpsProject.git
+   `git clone https://github.com/ArielDomchik/DevOpsProject.git`
 
 2. Provision the VPC and cluster infrastructure using Terraform:
 
@@ -47,7 +47,10 @@ Follow the steps below to set up the project:
 Run the Jenkins pipeline to build, test, and deploy the application.
 
 ## Cleanup
- ` use terraform destroy`
+ - use `terraform destroy` in terraform-configuration directory
+
+
+## Additional steps
 
 - terraform apply to provision vpc and cluster
 - Dont forget to manually attach AmazonEBSCSIPolicy! (need to find a way to provision this with terraform)
