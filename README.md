@@ -1,7 +1,6 @@
 # DevOps Project
 
-This project provides an automated deployment pipeline using Jenkins, Docker, and Kubernetes, and logging with ELK Stackx
-.
+This project provides an automated deployment pipeline using Jenkins, Docker, and Kubernetes, and logging with ELK Stack.
 
 ## Prerequisites
 
